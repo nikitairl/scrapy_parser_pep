@@ -1,9 +1,6 @@
 from scrapy import signals
 
 
-from itemadapter import is_item, ItemAdapter
-
-
 class PepParseSpiderMiddleware:
     @classmethod
     def from_crawler(cls, crawler):
