@@ -9,7 +9,7 @@ NEWSPIDER_MODULE = "pep_parse.spiders"
 
 ROBOTSTXT_OBEY = True
 
-BASE_DIR = Path(__name__).parent.parent
+BASE_DIR = Path(__name__).parent
 
 FEEDS = {
     "results/pep_%(time)s.csv": {

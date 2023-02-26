@@ -4,20 +4,20 @@ from datetime import datetime as dt
 
 from .settings import BASE_DIR
 
-RESULT_DIR = BASE_DIR / "results"
+RESULTS = "results"
 RESULT_FILE = "status_summary_{time}.csv"
 
 
 class PepParsePipeline:
     def __init__(self):
-        self.results_dir = RESULT_DIR
+        self.results_dir = BASE_DIR / RESULTS
         self.results_dir.mkdir(exist_ok=True)
 
     def open_spider(self, spider):
         self.counter = defaultdict(int)
 
     def process_item(self, item, spider):
-        self.total = len(item['status'])
+        self.total = len(item["status"])
         self.counter[item["status"]] += 1
         return item
 
